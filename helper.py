@@ -31,7 +31,7 @@ def import_datasets():
     print('Importing practicedb dataset:')
     config['dbname'] = 'practicedb'
     conn = psycopg2.connect(**config)
-    with open('/content/drive/MyDrive/transaction/practiceData.sql', 'r') as f:
+    with open('/content/CS345_transaction/practiceData.sql', 'r') as f:
         commands = f.read()
         cursor = conn.cursor()
         cursor.execute(commands)
@@ -42,11 +42,11 @@ def import_datasets():
 
     print('Importing imdb dataset:')
     config['dbname'] = 'imdb2015'
-    os.system('psql postgresql://postgres:postgres@localhost:5432/imdb2015 -f /content/drive/MyDrive/transaction/create_imdb2015.sql')
+    os.system('psql postgresql://postgres:postgres@localhost:5432/imdb2015 -f /content/CS345_transaction/create_imdb2015.sql')
     # conn = psycopg2.connect(**config)
     # cursor = conn.cursor()
-    # cursor.execute('\i /content/drive/MyDrive/transaction/create_imdb2015.sql')
-    # with open('/content/drive/MyDrive/transaction/create_imdb2015.sql', 'r') as f:
+    # cursor.execute('\i /content/CS345_transaction/create_imdb2015.sql')
+    # with open('/content/CS345_transaction/create_imdb2015.sql', 'r') as f:
     #     commands = f.read()
     #     cursor = conn.cursor()
     #     cursor.execute(commands)
@@ -58,7 +58,7 @@ def import_datasets():
     print('Importing customer dataset:')
     config['dbname'] = 'customer'
     conn = psycopg2.connect(**config)
-    with open('/content/drive/MyDrive/transaction/setup.sql', 'r') as f:
+    with open('/content/CS345_transaction/setup.sql', 'r') as f:
         commands = f.read()
         cursor = conn.cursor()
         cursor.execute(commands)
